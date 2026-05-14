@@ -1,0 +1,122 @@
+:root {
+    --primary: #3b82f6;
+    --border: #e5e7eb;
+    --bg-sec: #f9fafb;
+    --text: #111827;
+    --text-sec: #6b7280;
+    --danger: #ef4444;
+    --warn: #f59e0b;
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: #f3f4f6;
+    color: var(--text);
+    margin: 0;
+    padding: 24px;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.hidden { display: none !important; }
+
+/* Upload Zone */
+.upload-zone {
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.upload-zone:hover { border-color: var(--primary); background: var(--bg-sec); }
+
+.main-icon { font-size: 48px; color: #d1d5db; display: block; margin-bottom: 16px; }
+
+/* Buttons */
+.button-group { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: white;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.primary-btn { background: var(--text); color: white; border: none; width: 100%; justify-content: center; padding: 12px; }
+.text-btn { border: none; background: transparent; color: var(--text-sec); }
+
+/* Form Paper */
+.form-paper {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    line-height: 1.6;
+}
+
+.paper-header { text-align: center; margin-bottom: 20px; }
+
+.top-input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    padding: 2px 4px;
+    font-family: inherit;
+}
+
+.receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.receipt-table th, .receipt-table td {
+    border: 1px solid #444;
+    padding: 4px;
+}
+
+.cell-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.bottom-border-line {
+    border-bottom: 1px solid #888;
+    flex: 1;
+    min-width: 200px;
+    display: inline-block;
+}
+
+.signature-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.sig-line { border-bottom: 1px solid #888; margin-bottom: 8px; height: 40px; }
+
+/* Alerts */
+.alert { padding: 10px; border-radius: 6px; margin-bottom: 10px; font-size: 13px; }
+.alert-danger { background: #fee2e2; color: var(--danger); }
+.alert-warn { background: #fef3c7; color: var(--warn); }
+
+/* Print Logic */
+@media print {
+    .no-print { display: none !important; }
+    body { background: white; padding: 0; }
+    .form-paper { box-shadow: none; border: none; padding: 0; }
+    .container { max-width: 100%; }
+}
